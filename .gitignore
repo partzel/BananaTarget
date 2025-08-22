@@ -1,0 +1,99 @@
+# ---------------------------
+# Python
+# ---------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# PyInstaller
+*.spec
+build/
+dist/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---------------------------
+# Godot (General)
+# ---------------------------
+# Exported builds
+export/
+*.import/
+
+# Godot-generated import files
+.import/
+*.translation
+
+# Godot editor metadata
+.editor_settings-3.tres
+.editor_settings-4.tres
+.editor_settings.tres
+
+# Godot cache
+.cache/
+.godot/
+
+# ---------------------------
+# Godot with Mono (C#)
+# ---------------------------
+.mono/
+data_*/
+mono_crash.*.json
+
+# Build outputs (similar to Unity/VS)
+bin/
+obj/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+*.dll
+*.exe
+*.mdb
+*.pdb
+
+# Visual Studio / Rider
+*.user
+*.suo
+*.userprefs
+*.csproj.user
+*.pidb
+*.booproj
+.vs/
+*.DotSettings
+
+# ---------------------------
+# OS files
+# ---------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
