@@ -6,28 +6,45 @@ public partial class Monkey : CharacterBody3D
 	[Export] public float RotationSpeed = 3.0f;   // radians per second
 	[Export] public float MoveSpeed = 5.0f;
 	[Export] public float ThrowForce = 10.0f;
-	[Export] public double ThrowCooldown = 2f;
+	[Export] public float ThrowCooldown = 2f;
 
 	private Node3D _bananaSpawnLocation;
 	private AnimationPlayer _anim;
 	private BananaPool _bananaPool;
+	private ProgressBar _cooldownBar;
 
 	private bool _isThrowing;
 	private double _lastThrowTime;
-
-
+	private float _cooldownRemaining;
 
 	public override void _Ready()
 	{
 		_bananaSpawnLocation = GetNode<Node3D>("BananaSpawnLocation");
 		_anim = GetNode<Node3D>("Model3D")
-				.GetNode<AnimationPlayer>("AnimationPlayer");
+			   .GetNode<AnimationPlayer>("AnimationPlayer");
 		_bananaPool = GetNode<BananaPool>("BananaPool");
+		_cooldownBar = GetNode<CanvasLayer>("CooldownUI")
+					  .GetNode<ProgressBar>("ProgressBar");
 
 		_isThrowing = false;
-		_lastThrowTime = -999.0;
 
 		_anim.Play("Idle");
+
+		_cooldownRemaining = 0;
+		_cooldownBar.Visible = false;
+	}
+
+	public override void _Process(double delta)
+	{
+		if (_cooldownRemaining > 0)
+		{
+			_cooldownRemaining -= (float)delta;
+			_cooldownBar.Value = _cooldownRemaining / ThrowCooldown * 100;
+			if (_cooldownRemaining <= 0)
+			{
+				_cooldownBar.Visible = false;
+			}
+		}
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -62,14 +79,18 @@ public partial class Monkey : CharacterBody3D
 
 	private void HandleAnimations()
 	{
-		if (Input.IsActionJustPressed("throw")
-		   && Time.GetTicksMsec() / 1000.0 - _lastThrowTime >= ThrowCooldown
-		   && !_isThrowing)
+		bool canThrow = _cooldownRemaining <= 0 && !_isThrowing;
+
+		if (Input.IsActionJustPressed("throw") && canThrow)
 		{
 			if (_anim is not null)
 			{
 				_isThrowing = true;
 				_anim.Play("Throw");
+
+				_cooldownRemaining = ThrowCooldown;
+				_cooldownBar.Visible = true;
+				_cooldownBar.Value = 100;
 			}
 		}
 		else if (Input.IsActionPressed("ui_up"))

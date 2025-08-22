@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://swyfwwsgm5nw"]
+[gd_scene load_steps=30 format=3 uid="uid://swyfwwsgm5nw"]
 
 [ext_resource type="Script" uid="uid://dpsy463mxovll" path="res://scripts/Monkey.cs" id="1_1uot1"]
 [ext_resource type="ArrayMesh" uid="uid://3abq8oskcn80" path="res://meshes/blockbench_export_mesh.res" id="3_ak2q3"]
@@ -25,6 +25,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c6kovd8hb4xxw" path="res://meshes/blockbench_export_mesh22.res" id="24_vk5df"]
 [ext_resource type="Animation" uid="uid://bik8jig4476di" path="res://animations/Idle.res" id="25_3hhy0"]
 [ext_resource type="Animation" uid="uid://dqtolovlqemhi" path="res://animations/Walk.res" id="26_hbr5c"]
+[ext_resource type="Script" uid="uid://cikrmlrla68n7" path="res://scripts/progress_bar.gd" id="27_ak2q3"]
 [ext_resource type="Animation" uid="uid://bbsw4snwo1bbp" path="res://animations/throw.res" id="27_juumc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rb1f4"]
@@ -226,3 +227,12 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_4koif")
 }
+
+[node name="CooldownUI" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CooldownUI" node_paths=PackedStringArray("target")]
+offset_right = 4.0
+offset_bottom = 27.0
+script = ExtResource("27_ak2q3")
+target = NodePath("../..")
+offset_3d = Vector3(0, 2, 0)
