@@ -1,18 +1,228 @@
-[gd_scene load_steps=4 format=3 uid="uid://swyfwwsgm5nw"]
+[gd_scene load_steps=29 format=3 uid="uid://swyfwwsgm5nw"]
 
 [ext_resource type="Script" uid="uid://dpsy463mxovll" path="res://scripts/Monkey.cs" id="1_1uot1"]
-[ext_resource type="PackedScene" uid="uid://36bv8lon7g7i" path="res://scenes/MonkeyModel.tscn" id="1_rb1f4"]
+[ext_resource type="ArrayMesh" uid="uid://3abq8oskcn80" path="res://meshes/blockbench_export_mesh.res" id="3_ak2q3"]
+[ext_resource type="ArrayMesh" uid="uid://dtnnfleyq5rga" path="res://meshes/blockbench_export_mesh2.res" id="4_vhlao"]
+[ext_resource type="ArrayMesh" uid="uid://7w5fhnn7c0s8" path="res://meshes/blockbench_export_mesh3.res" id="5_ucw3d"]
+[ext_resource type="ArrayMesh" uid="uid://c722mohmcndu4" path="res://meshes/blockbench_export_mesh4.res" id="6_8dkmy"]
+[ext_resource type="ArrayMesh" uid="uid://2755w2y0nufb" path="res://meshes/blockbench_export_mesh5.res" id="7_iogni"]
+[ext_resource type="ArrayMesh" uid="uid://d0fx4eo0un7xp" path="res://meshes/blockbench_export_mesh6.res" id="8_r21re"]
+[ext_resource type="ArrayMesh" uid="uid://bmpx8tf3f3r4a" path="res://meshes/blockbench_export_mesh7.res" id="9_y4j8v"]
+[ext_resource type="ArrayMesh" uid="uid://dilim5cgr3siy" path="res://meshes/blockbench_export_mesh8.res" id="10_4iwr6"]
+[ext_resource type="ArrayMesh" uid="uid://cjn0r2wc8cu04" path="res://meshes/blockbench_export_mesh9.res" id="11_1f0pq"]
+[ext_resource type="ArrayMesh" uid="uid://b2pspklu7x7tt" path="res://meshes/blockbench_export_mesh10.res" id="12_l0wth"]
+[ext_resource type="ArrayMesh" uid="uid://cq7fnb57jaxyi" path="res://meshes/blockbench_export_mesh11.res" id="13_xaor5"]
+[ext_resource type="ArrayMesh" uid="uid://dim0r032uaqf4" path="res://meshes/blockbench_export_mesh12.res" id="14_splfn"]
+[ext_resource type="ArrayMesh" uid="uid://cfbh6lwmq8w2k" path="res://meshes/blockbench_export_mesh13.res" id="15_vshpi"]
+[ext_resource type="ArrayMesh" uid="uid://qdugrfk3ledj" path="res://meshes/blockbench_export_mesh14.res" id="16_xe0nq"]
+[ext_resource type="ArrayMesh" uid="uid://cxcxgn2ehvxpn" path="res://meshes/blockbench_export_mesh15.res" id="17_nw0lu"]
+[ext_resource type="ArrayMesh" uid="uid://cnnlg8p8r0fsc" path="res://meshes/blockbench_export_mesh16.res" id="18_vgp3i"]
+[ext_resource type="ArrayMesh" uid="uid://b5rips63skw74" path="res://meshes/blockbench_export_mesh17.res" id="19_hkrva"]
+[ext_resource type="ArrayMesh" uid="uid://4w82km6sx0ct" path="res://meshes/blockbench_export_mesh18.res" id="20_y51ww"]
+[ext_resource type="ArrayMesh" uid="uid://cirp72wg3sxu8" path="res://meshes/blockbench_export_mesh19.res" id="21_b2wr8"]
+[ext_resource type="ArrayMesh" uid="uid://dyvvjc4hvl2fa" path="res://meshes/blockbench_export_mesh20.res" id="22_y0ttc"]
+[ext_resource type="ArrayMesh" uid="uid://ceok1bubd6a2" path="res://meshes/blockbench_export_mesh21.res" id="23_72uj0"]
+[ext_resource type="ArrayMesh" uid="uid://c6kovd8hb4xxw" path="res://meshes/blockbench_export_mesh22.res" id="24_vk5df"]
+[ext_resource type="Animation" uid="uid://bik8jig4476di" path="res://animations/Idle.res" id="25_3hhy0"]
+[ext_resource type="Animation" uid="uid://dqtolovlqemhi" path="res://animations/Walk.res" id="26_hbr5c"]
+[ext_resource type="Animation" uid="uid://bbsw4snwo1bbp" path="res://animations/throw.res" id="27_juumc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rb1f4"]
 radius = 0.377783
 height = 1.83581
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4koif"]
+_data = {
+&"Idle": ExtResource("25_3hhy0"),
+&"Throw": ExtResource("27_juumc"),
+&"Walk": ExtResource("26_hbr5c")
+}
+
 [node name="Monkey" type="CharacterBody3D"]
+collision_layer = 2
 script = ExtResource("1_1uot1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.836536, 0)
 shape = SubResource("CapsuleShape3D_rb1f4")
 
-[node name="Model3D" parent="." instance=ExtResource("1_rb1f4")]
+[node name="BananaSpawnLocation" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0986905, 1.05595, -0.825294)
+
+[node name="Model3D" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Node" type="Node3D" parent="Model3D"]
+
+[node name="Monkey" type="Node3D" parent="Model3D/Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4375, 0)
+
+[node name="trunk" type="Node3D" parent="Model3D/Node/Monkey"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+
+[node name="pelvis2" type="Node3D" parent="Model3D/Node/Monkey/trunk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0625, 0)
+
+[node name="pelvis" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.015625)
+mesh = ExtResource("3_ak2q3")
+skeleton = NodePath("")
+
+[node name="belly2" type="Node3D" parent="Model3D/Node/Monkey/trunk/pelvis2"]
+transform = Transform3D(0.991445, -0.0113761, 0.13003, 0.0337827, 0.984615, -0.171442, -0.126079, 0.174368, 0.976576, 0, 0, 0)
+
+[node name="belly" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0625, -0.015625)
+mesh = ExtResource("4_vhlao")
+skeleton = NodePath("")
+
+[node name="chest2" type="Node3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2"]
+transform = Transform3D(1, 0, 0, 0, 0.991445, -0.130526, 0, 0.130526, 0.991445, 0, 0.36875, 0)
+
+[node name="chest" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00625, 0)
+mesh = ExtResource("5_ucw3d")
+skeleton = NodePath("")
+
+[node name="upper-right-arm2" type="Node3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2"]
+transform = Transform3D(0.4266, 0.176704, 0.887011, -0.382683, 0.92388, 1.49012e-08, -0.819491, -0.339445, 0.461749, -0.1875, 0.06875, -0.0625)
+
+[node name="upper-right-arm" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/upper-right-arm2"]
+mesh = ExtResource("6_8dkmy")
+skeleton = NodePath("")
+
+[node name="lower-right-arm2" type="Node3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/upper-right-arm2"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, -0.25, 0)
+
+[node name="lower-right-arm" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/upper-right-arm2/lower-right-arm2"]
+mesh = ExtResource("7_iogni")
+skeleton = NodePath("")
+
+[node name="right-hand2" type="Node3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/upper-right-arm2/lower-right-arm2"]
+transform = Transform3D(-0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, -0.766044, 0, -0.25, 0)
+
+[node name="right-hand" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/upper-right-arm2/lower-right-arm2/right-hand2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009375, 0)
+mesh = ExtResource("8_r21re")
+skeleton = NodePath("")
+
+[node name="upper-left-arm2" type="Node3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2"]
+transform = Transform3D(0.293153, -0.245984, -0.92388, 0.642788, 0.766044, 0, 0.707733, -0.593858, 0.382684, 0.1875, 0.06875, -0.0625)
+
+[node name="upper-left-arm" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/upper-left-arm2"]
+mesh = ExtResource("9_y4j8v")
+skeleton = NodePath("")
+
+[node name="lower-left-arm2" type="Node3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/upper-left-arm2"]
+transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21644, 0, -0.21644, 0.976296, 0, -0.25, 0)
+
+[node name="lower-left-arm" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/upper-left-arm2/lower-left-arm2"]
+mesh = ExtResource("10_4iwr6")
+skeleton = NodePath("")
+
+[node name="left-hand2" type="Node3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/upper-left-arm2/lower-left-arm2"]
+transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, 0, -0.234375, 0)
+
+[node name="left-hand" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/upper-left-arm2/lower-left-arm2/left-hand2"]
+mesh = ExtResource("11_1f0pq")
+skeleton = NodePath("")
+
+[node name="neck2" type="Node3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.125, 0)
+
+[node name="neck" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/neck2"]
+mesh = ExtResource("12_l0wth")
+skeleton = NodePath("")
+
+[node name="head2" type="Node3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/neck2"]
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, 0, 0.06875, 0)
+
+[node name="head" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/neck2/head2"]
+mesh = ExtResource("13_xaor5")
+skeleton = NodePath("")
+
+[node name="left-ear" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/neck2/head2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.265625, 0.20625, -0.03125)
+mesh = ExtResource("14_splfn")
+skeleton = NodePath("")
+
+[node name="right-ear" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/neck2/head2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.2, -0.03125)
+mesh = ExtResource("15_vshpi")
+skeleton = NodePath("")
+
+[node name="tail" type="Node3D" parent="Model3D/Node/Monkey/trunk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00625, 0.1375, -0.13125)
+
+[node name="tail-seg-12" type="Node3D" parent="Model3D/Node/Monkey/trunk/tail"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00625, 0, 0)
+
+[node name="tail-seg-1" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/tail/tail-seg-12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01875)
+mesh = ExtResource("16_xe0nq")
+skeleton = NodePath("")
+
+[node name="tail-seg-22" type="Node3D" parent="Model3D/Node/Monkey/trunk/tail/tail-seg-12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.171875)
+
+[node name="tail-seg-2" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/tail/tail-seg-12/tail-seg-22"]
+transform = Transform3D(1, 0, 0, 0, 0.843391, -0.5373, 0, 0.5373, 0.843391, 0, 0.003125, 0)
+mesh = ExtResource("17_nw0lu")
+skeleton = NodePath("")
+
+[node name="tail-seg-32" type="Node3D" parent="Model3D/Node/Monkey/trunk/tail/tail-seg-12/tail-seg-22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09375, -0.15625)
+
+[node name="tail-seg-3" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/tail/tail-seg-12/tail-seg-22/tail-seg-32"]
+transform = Transform3D(1, 0, 0, 0, 0.0871557, -0.996195, 0, 0.996195, 0.0871557, 0, 0.00625, 0)
+mesh = ExtResource("18_vgp3i")
+skeleton = NodePath("")
+
+[node name="upper-left-leg2" type="Node3D" parent="Model3D/Node/Monkey/trunk"]
+transform = Transform3D(1, 0, 0, 0, 0.92388, 0.382684, 0, -0.382684, 0.92388, 0.125, 0, 0)
+
+[node name="upper-left-leg" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/upper-left-leg2"]
+mesh = ExtResource("19_hkrva")
+skeleton = NodePath("")
+
+[node name="lower-left-leg2" type="Node3D" parent="Model3D/Node/Monkey/trunk/upper-left-leg2"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, -0.25, 0)
+
+[node name="lower-left-leg" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/upper-left-leg2/lower-left-leg2"]
+mesh = ExtResource("20_y51ww")
+skeleton = NodePath("")
+
+[node name="left-foot2" type="Node3D" parent="Model3D/Node/Monkey/trunk/upper-left-leg2/lower-left-leg2"]
+transform = Transform3D(1, 0, 0, 0, 0.991445, -0.130526, 0, 0.130526, 0.991445, 0, -0.296875, -0.015625)
+
+[node name="left-foot" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/upper-left-leg2/lower-left-leg2/left-foot2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.046875, 0.015625)
+mesh = ExtResource("21_b2wr8")
+skeleton = NodePath("")
+
+[node name="upper-right-leg2" type="Node3D" parent="Model3D/Node/Monkey/trunk"]
+transform = Transform3D(1, 0, 0, 0, 0.999048, 0.0436194, 0, -0.0436194, 0.999048, -0.125, 0, 0)
+
+[node name="upper-right-leg" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/upper-right-leg2"]
+mesh = ExtResource("22_y0ttc")
+skeleton = NodePath("")
+
+[node name="lower-right-leg2" type="Node3D" parent="Model3D/Node/Monkey/trunk/upper-right-leg2"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 0, -0.25, 0)
+
+[node name="lower-right-leg" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/upper-right-leg2/lower-right-leg2"]
+mesh = ExtResource("23_72uj0")
+skeleton = NodePath("")
+
+[node name="right-foot2" type="Node3D" parent="Model3D/Node/Monkey/trunk/upper-right-leg2/lower-right-leg2"]
+transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21644, 0, -0.21644, 0.976296, 0, -0.296875, -0.03125)
+
+[node name="right-foot" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/upper-right-leg2/lower-right-leg2/right-foot2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.046875, 0.03125)
+mesh = ExtResource("24_vk5df")
+skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Model3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_4koif")
+}

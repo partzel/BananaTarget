@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj66x8hpdkrqv"]
+
+[ext_resource type="PackedScene" uid="uid://dx1a1c66wlydu" path="res://assets/Banana.gltf" id="1_jdwfm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5gnsg"]
+
+[node name="Banana" type="RigidBody3D"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_5gnsg")
+
+[node name="Model3D" parent="." instance=ExtResource("1_jdwfm")]
