@@ -1,4 +1,4 @@
-extends ProgressBar
+extends TextureProgressBar
 
 @export var target: Node3D
 @export var offset_3d: Vector3

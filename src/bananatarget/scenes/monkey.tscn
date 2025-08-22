@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://swyfwwsgm5nw"]
+[gd_scene load_steps=31 format=3 uid="uid://swyfwwsgm5nw"]
 
 [ext_resource type="Script" uid="uid://dpsy463mxovll" path="res://scripts/Monkey.cs" id="1_1uot1"]
 [ext_resource type="ArrayMesh" uid="uid://3abq8oskcn80" path="res://meshes/blockbench_export_mesh.res" id="3_ak2q3"]
@@ -27,6 +27,7 @@
 [ext_resource type="Animation" uid="uid://dqtolovlqemhi" path="res://animations/Walk.res" id="26_hbr5c"]
 [ext_resource type="Script" uid="uid://cikrmlrla68n7" path="res://scripts/progress_bar.gd" id="27_ak2q3"]
 [ext_resource type="Animation" uid="uid://bbsw4snwo1bbp" path="res://animations/throw.res" id="27_juumc"]
+[ext_resource type="Texture2D" uid="uid://b42ay035ob3wd" path="res://assets/circle_progress_bar.png" id="27_vhlao"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rb1f4"]
 radius = 0.377783
@@ -42,6 +43,7 @@ _data = {
 [node name="Monkey" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_1uot1")
+ThrowCooldown = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.836536, 0)
@@ -230,9 +232,14 @@ libraries = {
 
 [node name="CooldownUI" type="CanvasLayer" parent="."]
 
-[node name="ProgressBar" type="ProgressBar" parent="CooldownUI" node_paths=PackedStringArray("target")]
+[node name="ProgressBar" type="TextureProgressBar" parent="CooldownUI" node_paths=PackedStringArray("target")]
 offset_right = 4.0
 offset_bottom = 27.0
+fill_mode = 4
+texture_under = ExtResource("27_vhlao")
+texture_progress = ExtResource("27_vhlao")
+tint_under = Color(1, 1, 1, 0.541176)
+tint_progress = Color(0, 0.73344, 0.289932, 1)
 script = ExtResource("27_ak2q3")
 target = NodePath("../..")
 offset_3d = Vector3(0, 2, 0)

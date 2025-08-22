@@ -11,7 +11,7 @@ public partial class Monkey : CharacterBody3D
 	private Node3D _bananaSpawnLocation;
 	private AnimationPlayer _anim;
 	private BananaPool _bananaPool;
-	private ProgressBar _cooldownBar;
+	private TextureProgressBar _cooldownBar;
 
 	private bool _isThrowing;
 	private double _lastThrowTime;
@@ -24,7 +24,7 @@ public partial class Monkey : CharacterBody3D
 			   .GetNode<AnimationPlayer>("AnimationPlayer");
 		_bananaPool = GetNode<BananaPool>("BananaPool");
 		_cooldownBar = GetNode<CanvasLayer>("CooldownUI")
-					  .GetNode<ProgressBar>("ProgressBar");
+					  .GetNode<TextureProgressBar>("ProgressBar");
 
 		_isThrowing = false;
 
