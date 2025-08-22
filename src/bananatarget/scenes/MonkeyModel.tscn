@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://36bv8lon7g7i"]
+
+[ext_resource type="PackedScene" uid="uid://dt4fe2a0o72hh" path="res://assets/Monkey.gltf" id="1_rb1f4"]
+
+[node name="blockbench_export" instance=ExtResource("1_rb1f4")]
+
+[node name="belly2" parent="Node/Monkey/trunk/pelvis2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0)
+
+[node name="chest2" parent="Node/Monkey/trunk/pelvis2/belly2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.991445, -0.130526, 0, 0.130526, 0.991445, 0, 0.36875, 0)
+
+[node name="upper-right-arm2" parent="Node/Monkey/trunk/pelvis2/belly2/chest2" index="1"]
+transform = Transform3D(0.326506, 0.326506, 0.887011, -0.707107, 0.707107, 2.98023e-08, -0.627211, -0.627211, 0.461749, -0.1875, 0.06875, -0.0625)
+
+[node name="lower-right-arm2" parent="Node/Monkey/trunk/pelvis2/belly2/chest2/upper-right-arm2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, -0.25, 0)
+
+[node name="right-hand2" parent="Node/Monkey/trunk/pelvis2/belly2/chest2/upper-right-arm2/lower-right-arm2" index="1"]
+transform = Transform3D(-0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, -0.766044, 0, -0.25, 0)
+
+[node name="upper-left-arm2" parent="Node/Monkey/trunk/pelvis2/belly2/chest2" index="2"]
+transform = Transform3D(0.293153, -0.245984, -0.92388, 0.642788, 0.766044, 0, 0.707733, -0.593858, 0.382684, 0.1875, 0.06875, -0.0625)
+
+[node name="lower-left-arm2" parent="Node/Monkey/trunk/pelvis2/belly2/chest2/upper-left-arm2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21644, 0, -0.21644, 0.976296, 0, -0.25, 0)
+
+[node name="left-hand2" parent="Node/Monkey/trunk/pelvis2/belly2/chest2/upper-left-arm2/lower-left-arm2" index="1"]
+transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, 0, -0.234375, 0)
+
+[node name="neck2" parent="Node/Monkey/trunk/pelvis2/belly2/chest2" index="3"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.125, 0)
+
+[node name="head2" parent="Node/Monkey/trunk/pelvis2/belly2/chest2/neck2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, 0, 0.06875, 0)
+
+[node name="upper-left-leg2" parent="Node/Monkey/trunk" index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0.125, 0, 0)
+
+[node name="lower-left-leg2" parent="Node/Monkey/trunk/upper-left-leg2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, -0.25, 0)
+
+[node name="upper-right-leg2" parent="Node/Monkey/trunk" index="3"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, -0.125, 0, 0)
+
+[node name="lower-right-leg2" parent="Node/Monkey/trunk/upper-right-leg2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 0, -0.25, 0)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Idle"

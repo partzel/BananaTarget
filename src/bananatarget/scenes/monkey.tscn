@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://swyfwwsgm5nw"]
+
+[ext_resource type="Script" uid="uid://dpsy463mxovll" path="res://scripts/Monkey.cs" id="1_1uot1"]
+[ext_resource type="PackedScene" uid="uid://36bv8lon7g7i" path="res://scenes/MonkeyModel.tscn" id="1_rb1f4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rb1f4"]
+radius = 0.377783
+height = 1.83581
+
+[node name="Monkey" type="CharacterBody3D"]
+script = ExtResource("1_1uot1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.836536, 0)
+shape = SubResource("CapsuleShape3D_rb1f4")
+
+[node name="Model3D" parent="." instance=ExtResource("1_rb1f4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://barftwps11sdv"]
+
+[ext_resource type="PackedScene" uid="uid://swyfwwsgm5nw" path="res://scenes/monkey.tscn" id="1_uhqny"]
+
+[node name="Level" type="Node3D"]
+
+[node name="Monkey" parent="." instance=ExtResource("1_uhqny")]
+MoveSpeed = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.822571, 0.212546, -0.527447, 4.73243e-09, 0.927523, 0.373765, 0.568662, 0.307448, -0.762954, -4.26552, 4.07305, -6.69611)
+projection = 1
+size = 3.76783
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.784694, -0.425748, -0.45055, -0.55694, 0.803337, 0.210872, 0.272165, 0.416399, -0.86749, 2.74438, 3.74414, -8.14532)
