@@ -73,6 +73,12 @@ public partial class Monkey : CharacterBody3D
 			velocity = -Transform.Basis.Z * MoveSpeed;
 		}
 
+		if (Input.IsActionPressed("ui_down"))
+		{
+			// Forward is -Z in Godot 3D
+			velocity = Transform.Basis.Z * MoveSpeed;
+		}
+
 		Velocity = velocity;
 		MoveAndSlide();
 	}
@@ -93,11 +99,12 @@ public partial class Monkey : CharacterBody3D
 				_cooldownBar.Value = 100;
 			}
 		}
-		else if (Input.IsActionPressed("ui_up"))
+		else if (  Input.IsActionPressed("ui_up")
+				|| Input.IsActionPressed("ui_down"))
 		{
 			_anim.Play("Walk");
 		}
-		else if (Input.IsActionJustReleased("ui_up"))
+		else
 		{
 			_anim.Play("Idle");
 		}
