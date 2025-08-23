@@ -1,0 +1,160 @@
+[gd_scene load_steps=19 format=3 uid="uid://50bnit8p3nrj"]
+
+[ext_resource type="ArrayMesh" uid="uid://ti0kgfgju2y0" path="res://meshes/Toucan/blockbench_export_mesh.res" id="1_rsta3"]
+[ext_resource type="ArrayMesh" uid="uid://d0es4bfqise1g" path="res://meshes/Toucan/blockbench_export_mesh2.res" id="2_6xdjw"]
+[ext_resource type="ArrayMesh" uid="uid://bgfx1q3hd8sp6" path="res://meshes/Toucan/blockbench_export_mesh3.res" id="3_48bmn"]
+[ext_resource type="ArrayMesh" uid="uid://dny8oil31lhbe" path="res://meshes/Toucan/blockbench_export_mesh4.res" id="4_3u2lc"]
+[ext_resource type="ArrayMesh" uid="uid://buspmh21pvuwa" path="res://meshes/Toucan/blockbench_export_mesh5.res" id="5_4eh7r"]
+[ext_resource type="ArrayMesh" uid="uid://bw2lokrjmcpmn" path="res://meshes/Toucan/blockbench_export_mesh6.res" id="6_bvqls"]
+[ext_resource type="ArrayMesh" uid="uid://c1oc7qwyf3y48" path="res://meshes/Toucan/blockbench_export_mesh7.res" id="7_4sdjn"]
+[ext_resource type="ArrayMesh" uid="uid://cmunpbvsj4m2b" path="res://meshes/Toucan/blockbench_export_mesh8.res" id="8_tqfee"]
+[ext_resource type="ArrayMesh" uid="uid://bnbb7t7860yfi" path="res://meshes/Toucan/blockbench_export_mesh9.res" id="9_6yqbd"]
+[ext_resource type="ArrayMesh" uid="uid://cr8hxb4i2oavv" path="res://meshes/Toucan/blockbench_export_mesh10.res" id="10_cuhqj"]
+[ext_resource type="ArrayMesh" uid="uid://5v7elnwj2ep" path="res://meshes/Toucan/blockbench_export_mesh11.res" id="11_gpcs8"]
+[ext_resource type="ArrayMesh" uid="uid://dglemkvh1102h" path="res://meshes/Toucan/blockbench_export_mesh12.res" id="12_83epl"]
+[ext_resource type="ArrayMesh" uid="uid://4hbu0ss7wrcs" path="res://meshes/Toucan/blockbench_export_mesh13.res" id="13_guq16"]
+[ext_resource type="ArrayMesh" uid="uid://d0fjp647oplqx" path="res://meshes/Toucan/blockbench_export_mesh14.res" id="14_wu0cf"]
+[ext_resource type="Animation" uid="uid://3b3t5rkq45kv" path="res://animations/Toucan/Idle.res" id="15_ik5fy"]
+[ext_resource type="Animation" uid="uid://blo5a411cm07c" path="res://animations/Toucan/Exit.res" id="16_jk5un"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_01kgs"]
+radius = 0.370315
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gdwv1"]
+_data = {
+&"Exit": ExtResource("16_jk5un"),
+&"Idle": ExtResource("15_ik5fy")
+}
+
+[node name="Toucan" type="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.182068, -0.207703)
+shape = SubResource("SphereShape3D_01kgs")
+
+[node name="Model3D" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0862331, 0, 0)
+
+[node name="Node2" type="Node3D" parent="Model3D"]
+
+[node name="Toucan" type="Node3D" parent="Model3D/Node2"]
+
+[node name="particle-spawn2" type="Node3D" parent="Model3D/Node2/Toucan"]
+
+[node name="particle-spawn" type="Node3D" parent="Model3D/Node2/Toucan/particle-spawn2"]
+transform = Transform3D(0.0275229, 0, 0, 0, 0.0275229, 0, 0, 0, 0.0275229, 0, 0, 0)
+
+[node name="Node" type="Node3D" parent="Model3D/Node2/Toucan/particle-spawn2"]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
+
+[node name="trunk2" type="Node3D" parent="Model3D/Node2/Toucan"]
+transform = Transform3D(0.887011, 0.461749, 0, -0.461749, 0.887011, 0, 0, 0, 1, 0, 0.25625, 0)
+
+[node name="trunk" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0625, -0.125)
+mesh = ExtResource("1_rsta3")
+skeleton = NodePath("")
+
+[node name="right-wing2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2"]
+transform = Transform3D(-0.438205, -0.214588, 0.872885, 0.898554, -0.130526, 0.419003, 0.0240213, 0.967944, 0.250016, 0.115625, 0.015625, -0.2375)
+
+[node name="right-wing" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/right-wing2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003125, 0.03125, 0.03125)
+mesh = ExtResource("2_6xdjw")
+skeleton = NodePath("")
+
+[node name="left-wing2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2"]
+transform = Transform3D(-0.355929, 0.172163, -0.918518, -0.915975, 0.130526, 0.37941, 0.185211, 0.976383, 0.111239, -0.121875, 0.03125, -0.221875)
+
+[node name="left-wing" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/left-wing2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003125, 0.015625, 0)
+mesh = ExtResource("3_48bmn")
+skeleton = NodePath("")
+
+[node name="neck2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03125, -0.265625)
+
+[node name="neck" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/neck2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.046875, 0.03125)
+mesh = ExtResource("4_3u2lc")
+skeleton = NodePath("")
+
+[node name="head2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2/neck2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09375, 0)
+
+[node name="head" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/neck2/head2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03125, -0.015625)
+mesh = ExtResource("5_4eh7r")
+skeleton = NodePath("")
+
+[node name="beak2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2/neck2/head2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0625, -0.0625)
+
+[node name="beak" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/neck2/head2/beak2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03125, 0)
+mesh = ExtResource("6_bvqls")
+skeleton = NodePath("")
+
+[node name="mouth2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2/neck2/head2/beak2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03125, -0.21875)
+
+[node name="mouth" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/neck2/head2/beak2/mouth2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03125, -0.0625)
+mesh = ExtResource("7_4sdjn")
+skeleton = NodePath("")
+
+[node name="left-thigh2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2"]
+transform = Transform3D(0.976296, 0.21644, 0, -0.21644, 0.976296, 0, 0, 0, 1, -0.078125, -0.140625, -0.01875)
+
+[node name="left-thigh" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/left-thigh2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03125, 0, 0)
+mesh = ExtResource("8_tqfee")
+skeleton = NodePath("")
+
+[node name="left-leg2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2/left-thigh2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03125, -0.015625, 0)
+
+[node name="left-leg" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/left-thigh2/left-leg2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.55112e-17, 0)
+mesh = ExtResource("9_6yqbd")
+skeleton = NodePath("")
+
+[node name="left-foot" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/left-thigh2/left-leg2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009375, -0.078125, 0)
+mesh = ExtResource("10_cuhqj")
+skeleton = NodePath("")
+
+[node name="right-thigh2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2"]
+transform = Transform3D(0.803857, -0.594823, 0, 0.594823, 0.803857, 0, 0, 0, 1, 0.046875, -0.125, -0.01875)
+
+[node name="right-thigh" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/right-thigh2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.015625, 0)
+mesh = ExtResource("11_gpcs8")
+skeleton = NodePath("")
+
+[node name="right-leg2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2/right-thigh2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03125, 0)
+
+[node name="right-leg" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/right-thigh2/right-leg2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.55112e-17, 0)
+mesh = ExtResource("12_83epl")
+skeleton = NodePath("")
+
+[node name="right-foot" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/right-thigh2/right-leg2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00625, -0.078125, 0)
+mesh = ExtResource("13_guq16")
+skeleton = NodePath("")
+
+[node name="tail2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0.025)
+
+[node name="tail" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/tail2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.084375)
+mesh = ExtResource("14_wu0cf")
+skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Model3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_gdwv1")
+}
+autoplay = "Idle"

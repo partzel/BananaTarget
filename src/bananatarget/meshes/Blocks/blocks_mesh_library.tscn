@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://f04cklabcsjb"]
+
+[ext_resource type="ArrayMesh" uid="uid://bm6mdbx8a3sge" path="res://meshes/Blocks/dirt.res" id="1_heoph"]
+[ext_resource type="ArrayMesh" uid="uid://dc7by6ffj760l" path="res://meshes/Blocks/grass.res" id="2_qvx8e"]
+[ext_resource type="ArrayMesh" uid="uid://b5acagfcll3ia" path="res://meshes/Blocks/water.res" id="3_fy4gf"]
+
+[node name="BlocksMeshLibrary" type="Node3D"]
+
+[node name="Dirt" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_heoph")
+
+[node name="Grass" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_qvx8e")
+
+[node name="Water" type="MeshInstance3D" parent="."]
+mesh = ExtResource("3_fy4gf")
