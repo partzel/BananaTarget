@@ -54,9 +54,15 @@ PoolSize = 2
 SpawnAreaMin = Vector3(-6, 0.5, -10)
 SpawnAreaMax = Vector3(2, 0.5, -5)
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("pool") groups=["game_manager"]]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("ToucanPool", "BananaPool", "Monkey") groups=["game_manager"]]
 script = ExtResource("7_4qegb")
-pool = NodePath("../ToucanPool")
+ToucanPool = NodePath("../ToucanPool")
+BananaPool = NodePath("../Monkey/BananaPool")
+Monkey = NodePath("../Monkey")
+
+[node name="RoundTimer" type="Timer" parent="GameManager"]
+wait_time = 10.0
+one_shot = true
 
 [node name="Abyss" type="Area3D" parent="." node_paths=PackedStringArray("BananaPool")]
 script = ExtResource("8_faw0r")

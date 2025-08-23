@@ -14,7 +14,6 @@ public partial class Abyss : Area3D
     {
         if (body.IsInGroup("banana"))
         {
-            GD.Print("Banana fell into abyss → returning to pool");
             BananaPool.ReturnBanana((RigidBody3D) body);
         }
     }

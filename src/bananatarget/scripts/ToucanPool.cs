@@ -52,13 +52,16 @@ public partial class ToucanPool : Node3D
     {
         EmitSignal(SignalName.ToucanScored);
 
-        // Recycle
         BananaPool.ReturnBanana(banana);
+        ReturnToucan(toucan);
+        SpawnToucan();
+    }
+
+    private void ReturnToucan(Toucan toucan)
+    {
         toucan.CollisionLayer = 0;
         toucan.CollisionMask = 0;
         toucan.AnimationPlayer.Play("Exit");
         available.Enqueue(toucan);
-
-        SpawnToucan();
     }
 }

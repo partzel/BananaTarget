@@ -21,7 +21,6 @@ public partial class Toucan : Area3D
 	{
 		if (body.IsInGroup("banana"))
 		{
-			GD.Print("I was hit!");
 			EmitSignal(SignalName.ToucanHit, this, body);
 		}
 	}
