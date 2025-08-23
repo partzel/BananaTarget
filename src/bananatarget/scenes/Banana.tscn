@@ -4,8 +4,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5gnsg"]
 
-[node name="Banana" type="RigidBody3D"]
-collision_mask = 2
+[node name="Banana" type="RigidBody3D" groups=["banana"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_5gnsg")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://50bnit8p3nrj"]
+[gd_scene load_steps=20 format=3 uid="uid://50bnit8p3nrj"]
 
+[ext_resource type="Script" uid="uid://7xqrq2e368n3" path="res://scripts/Toucan.cs" id="1_6xdjw"]
 [ext_resource type="ArrayMesh" uid="uid://ti0kgfgju2y0" path="res://meshes/Toucan/blockbench_export_mesh.res" id="1_rsta3"]
 [ext_resource type="ArrayMesh" uid="uid://d0es4bfqise1g" path="res://meshes/Toucan/blockbench_export_mesh2.res" id="2_6xdjw"]
 [ext_resource type="ArrayMesh" uid="uid://bgfx1q3hd8sp6" path="res://meshes/Toucan/blockbench_export_mesh3.res" id="3_48bmn"]
@@ -27,6 +28,7 @@ _data = {
 }
 
 [node name="Toucan" type="Area3D"]
+script = ExtResource("1_6xdjw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.182068, -0.207703)
@@ -48,7 +50,7 @@ transform = Transform3D(0.0275229, 0, 0, 0, 0.0275229, 0, 0, 0, 0.0275229, 0, 0,
 transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
 
 [node name="trunk2" type="Node3D" parent="Model3D/Node2/Toucan"]
-transform = Transform3D(0.887011, 0.461749, 0, -0.461749, 0.887011, 0, 0, 0, 1, 0, 0.25625, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
 
 [node name="trunk" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0625, -0.125)
@@ -56,7 +58,7 @@ mesh = ExtResource("1_rsta3")
 skeleton = NodePath("")
 
 [node name="right-wing2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2"]
-transform = Transform3D(-0.438205, -0.214588, 0.872885, 0.898554, -0.130526, 0.419003, 0.0240213, 0.967944, 0.250016, 0.115625, 0.015625, -0.2375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115625, 0.015625, -0.2375)
 
 [node name="right-wing" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/right-wing2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003125, 0.03125, 0.03125)
@@ -64,7 +66,7 @@ mesh = ExtResource("2_6xdjw")
 skeleton = NodePath("")
 
 [node name="left-wing2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2"]
-transform = Transform3D(-0.355929, 0.172163, -0.918518, -0.915975, 0.130526, 0.37941, 0.185211, 0.976383, 0.111239, -0.121875, 0.03125, -0.221875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121875, 0.03125, -0.221875)
 
 [node name="left-wing" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/left-wing2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003125, 0.015625, 0)
@@ -104,7 +106,7 @@ mesh = ExtResource("7_4sdjn")
 skeleton = NodePath("")
 
 [node name="left-thigh2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2"]
-transform = Transform3D(0.976296, 0.21644, 0, -0.21644, 0.976296, 0, 0, 0, 1, -0.078125, -0.140625, -0.01875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.078125, -0.140625, -0.01875)
 
 [node name="left-thigh" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/left-thigh2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03125, 0, 0)
@@ -125,7 +127,7 @@ mesh = ExtResource("10_cuhqj")
 skeleton = NodePath("")
 
 [node name="right-thigh2" type="Node3D" parent="Model3D/Node2/Toucan/trunk2"]
-transform = Transform3D(0.803857, -0.594823, 0, 0.594823, 0.803857, 0, 0, 0, 1, 0.046875, -0.125, -0.01875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046875, -0.125, -0.01875)
 
 [node name="right-thigh" type="MeshInstance3D" parent="Model3D/Node2/Toucan/trunk2/right-thigh2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.015625, 0)

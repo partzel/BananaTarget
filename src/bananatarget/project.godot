@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 project/assembly_name="BananaTarget"
 
+[global_group]
+
+banana=""
+game_manager=""
+abiss=""
+
 [input]
 
 throw={
@@ -32,3 +38,4 @@ throw={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.614024, 0.812842, 0.91505, 1)

@@ -27,14 +27,17 @@ public partial class BananaPool : Node
 			return null;
 
 		var banana = _pool.Dequeue();
-		banana.Visible = true;
+
 		banana.Sleeping = false;
+		banana.SetProcess(true);
+		banana.Visible = true;
 		return banana;
 	}
 
 	public void ReturnBanana(RigidBody3D banana)
 	{
 		banana.Visible = false;
+		banana.SetProcess(false);
 		banana.Sleeping = true;
 		_pool.Enqueue(banana);
 	}
