@@ -6,7 +6,7 @@ public partial class GameManager : Node
     [Export] public ToucanPool ToucanPool;
     [Export] public BananaPool BananaPool;
     [Export] public Monkey Monkey;
-    [Export] public float RewardPerTarget = 10;
+    [Export] public float RewardPerTarget = 1;
 
     private float _totalReward = 0;
     private Timer _roundTimer;

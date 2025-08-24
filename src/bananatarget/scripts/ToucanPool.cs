@@ -11,7 +11,8 @@ public partial class ToucanPool : Node3D
     [Signal] public delegate void ToucanScoredEventHandler();
 
     private Queue<Toucan> available = new Queue<Toucan>();
-
+    private uint _toucanCollisionLayer = 3;
+    private uint _bananaCollisionLayer = 2;
     public override void _Ready()
     {
         for (int i = 0; i < PoolSize; i++)
@@ -41,6 +42,8 @@ public partial class ToucanPool : Node3D
             (float)GD.RandRange(SpawnAreaMin.Z, SpawnAreaMax.Z)
         );
 
+        toucan.CollisionLayer = _toucanCollisionLayer;
+        toucan.CollisionMask = _bananaCollisionLayer;
         toucan.Visible = true;
         toucan.AnimationPlayer.Play("Idle");
         toucan.SetProcess(true);
@@ -57,6 +60,8 @@ public partial class ToucanPool : Node3D
 
     private void ReturnToucan(Toucan toucan)
     {
+        toucan.CollisionLayer = 0;
+        toucan.CollisionMask = 0;
         toucan.AnimationPlayer.Play("Exit");
         available.Enqueue(toucan);
     }
