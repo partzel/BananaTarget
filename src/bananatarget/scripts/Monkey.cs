@@ -25,13 +25,17 @@ public partial class Monkey : CharacterBody3D
 	private AnimationPlayer _anim;
 	private BananaPool _bananaPool;
 	private TextureProgressBar _cooldownBar;
-
+	private float _gravity;
+	private float _verticalVelocity;
 	private bool _isThrowing;
 	private double _lastThrowTime;
 	private float _cooldownRemaining;
 
 	public override void _Ready()
 	{
+		_gravity = -9.8f;  //(float)ProjectSettings.GetSetting("physics/3d/gravity");
+		_verticalVelocity = 0f;
+
 		_bananaSpawnLocation = GetNode<Node3D>("BananaSpawnLocation");
 		_anim = GetNode<Node3D>("Model3D")
 			   .GetNode<AnimationPlayer>("AnimationPlayer");
@@ -59,7 +63,12 @@ public partial class Monkey : CharacterBody3D
 		}
 
 		// Reward
-		var allRays = TargetRays.Concat(BackRays).Concat(RightRays).Concat(LeftRays);
+		var allRays = TargetRays
+					.Concat(FrontRays)
+					.Concat(BackRays)
+					.Concat(RightRays)
+					.Concat(LeftRays);
+					
 		foreach (var ray in allRays)
 		{
 			GetRayReward(ray);
@@ -97,6 +106,12 @@ public partial class Monkey : CharacterBody3D
 			velocity = Transform.Basis.Z * MoveSpeed;
 		}
 
+		if (!IsOnFloor())
+			_verticalVelocity += _gravity * delta;
+		else
+			_verticalVelocity = 0;
+
+		velocity.Y = _verticalVelocity;
 		Velocity = velocity;
 		MoveAndSlide();
 	}

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://f04cklabcsjb"]
+[gd_scene load_steps=6 format=3 uid="uid://f04cklabcsjb"]
 
 [ext_resource type="ArrayMesh" uid="uid://bm6mdbx8a3sge" path="res://meshes/Blocks/dirt.res" id="1_heoph"]
 [ext_resource type="ArrayMesh" uid="uid://dc7by6ffj760l" path="res://meshes/Blocks/grass.res" id="2_qvx8e"]
-[ext_resource type="ArrayMesh" uid="uid://b5acagfcll3ia" path="res://meshes/Blocks/water.res" id="3_fy4gf"]
+[ext_resource type="ArrayMesh" uid="uid://bngjpnhrrxo6c" path="res://meshes/Blocks/water.res" id="3_fy4gf"]
+[ext_resource type="Material" uid="uid://w7oahajvt88c" path="res://materials/Environment/material_0.tres" id="3_qvx8e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_heoph"]
 size = Vector3(1, 2, 1)
@@ -33,6 +34,7 @@ shape = SubResource("BoxShape3D_heoph")
 [node name="Water" type="StaticBody3D" parent="." groups=["water"]]
 
 [node name="Water" type="MeshInstance3D" parent="Water"]
+material_override = ExtResource("3_qvx8e")
 mesh = ExtResource("3_fy4gf")
 skeleton = NodePath("../..")
 
