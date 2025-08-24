@@ -97,3 +97,9 @@ packages/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+
+# sb3 output
+model.zip
+model.onnx
+logs/

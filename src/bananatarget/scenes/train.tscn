@@ -1,55 +1,58 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbo5piaqdv2d4"]
+[gd_scene load_steps=4 format=3 uid="uid://cbo5piaqdv2d4"]
 
+[ext_resource type="Script" uid="uid://dlck6tv8lkorf" path="res://scripts/TrainSetup.gd" id="1_6b7q7"]
 [ext_resource type="PackedScene" uid="uid://barftwps11sdv" path="res://scenes/Level.tscn" id="1_68jl8"]
+[ext_resource type="Script" uid="uid://dtjvnbvqpccmf" path="res://addons/godot_rl_agents/sync.gd" id="2_d43s7"]
 
 [node name="Train" type="Node3D"]
+script = ExtResource("1_6b7q7")
 
-[node name="Level_0" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -16)
 
-[node name="Level_1" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game2" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -16)
 
-[node name="Level_2" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game3" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -66)
 
-[node name="Level_3" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game4" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -66)
 
-[node name="Level_4" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game5" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -16)
 
-[node name="Level_5" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game6" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -16)
 
-[node name="Level_6" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game7" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -66)
 
-[node name="Level_7" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game8" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -66)
 
-[node name="Level_8" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game9" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -115)
 
-[node name="Level_9" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game10" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -115)
 
-[node name="Level_10" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game11" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -165)
 
-[node name="Level_11" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game12" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -165)
 
-[node name="Level_12" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game13" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -115)
 
-[node name="Level_13" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game14" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -115)
 
-[node name="Level_14" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game15" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -165)
 
-[node name="Level_15" parent="." instance=ExtResource("1_68jl8")]
+[node name="Game16" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -165)
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -58,3 +61,8 @@ current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 39, 0)
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("2_d43s7")
+speed_up = 10.0
+metadata/_custom_type_script = "uid://dtjvnbvqpccmf"

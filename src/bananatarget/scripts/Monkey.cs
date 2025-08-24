@@ -80,68 +80,103 @@ public partial class Monkey : CharacterBody3D
 		if (_isThrowing)
 			return;
 
-		HandleMovement((float)delta);
-		HandleAnimations();
+		HandleInput((float)delta);
 	}
 
-	private void HandleMovement(float delta)
+	public void MoveForward(float delta)
+    {
+		_anim.Play("Walk");
+        Velocity = -Transform.Basis.Z * MoveSpeed;
+        ApplyGravity(delta);
+        MoveAndSlide();
+    }
+
+    public void MoveBackward(float delta)
+    {
+		_anim.Play("Walk");
+        Velocity = Transform.Basis.Z * MoveSpeed;
+        ApplyGravity(delta);
+        MoveAndSlide();
+    }
+
+    public void RotateLeft(float delta)
+    {
+		_anim.Play("Idle");
+        RotateY(-RotationSpeed * delta);
+    }
+
+    public void RotateRight(float delta)
+    {
+		_anim.Play("Idle");
+        RotateY(RotationSpeed * delta);
+    }
+
+    public void DoNothing(float delta)
+    {
+		_anim.Play("Idle");
+        Velocity = Vector3.Zero;
+        ApplyGravity(delta);
+        MoveAndSlide();
+    }
+
+    private void ApplyGravity(float delta)
+    {
+        if (!IsOnFloor())
+            _verticalVelocity += _gravity * delta;
+        else
+            _verticalVelocity = 0;
+
+        Velocity = new Vector3(Velocity.X, _verticalVelocity, Velocity.Z);
+    }
+
+	private void HandleInput(float delta)
 	{
-		Vector3 velocity = Vector3.Zero;
+		if (_isThrowing)
+			return;
 
-		// Rotate left/right (around Y axis)
-		if (Input.IsActionPressed("ui_left"))
-			RotateY(-RotationSpeed * delta);
-		if (Input.IsActionPressed("ui_right"))
-			RotateY(RotationSpeed * delta);
-
-		// Move forward
-		if (Input.IsActionPressed("ui_up"))
+		if (Input.IsAnythingPressed())
 		{
-			velocity = -Transform.Basis.Z * MoveSpeed;
-		}
-
-		// Move backward
-		if (Input.IsActionPressed("ui_down"))
-		{
-			velocity = Transform.Basis.Z * MoveSpeed;
-		}
-
-		if (!IsOnFloor())
-			_verticalVelocity += _gravity * delta;
-		else
-			_verticalVelocity = 0;
-
-		velocity.Y = _verticalVelocity;
-		Velocity = velocity;
-		MoveAndSlide();
-	}
-
-	private void HandleAnimations()
-	{
-		bool canThrow = _cooldownRemaining <= 0 && !_isThrowing;
-
-		if (Input.IsActionJustPressed("throw") && canThrow)
-		{
-			if (_anim is not null)
+			if (Input.IsActionJustPressed("throw"))
 			{
-				_isThrowing = true;
-				_anim.Play("Throw");
-
-				_cooldownRemaining = ThrowCooldown;
-				_cooldownBar.Visible = true;
-				_cooldownBar.Value = 100;
+				Throw();
+			}
+			if (Input.IsActionPressed("ui_left"))
+			{
+				RotateLeft(delta);
+			}
+			if (Input.IsActionPressed("ui_right"))
+			{
+				RotateRight(delta);
+			}
+			if (Input.IsActionPressed("ui_up"))
+			{
+				MoveForward(delta);
+			}
+			if (Input.IsActionPressed("ui_down"))
+			{
+				MoveBackward(delta);
 			}
 		}
-		else if (Input.IsActionPressed("ui_up")
-				|| Input.IsActionPressed("ui_down"))
-		{
-			_anim.Play("Walk");
-		}
 		else
 		{
-			_anim.Play("Idle");
+			DoNothing(delta);
+		}
+    }
+
+	private void Throw()
+	{
+		bool canThrow = _cooldownRemaining <= 0 && !_isThrowing;
+		if (_anim is not null && canThrow)
+		{
+			_isThrowing = true;
+			_anim.Play("Throw");
+
+			_cooldownRemaining = ThrowCooldown;
+			_cooldownBar.Visible = true;
+			_cooldownBar.Value = 100;
 		}
 	}
+
 
 	private void OnThrowRelease()
 	{
@@ -153,13 +188,11 @@ public partial class Monkey : CharacterBody3D
 		banana.LinearVelocity = (-Transform.Basis.Z * 0.8f + Vector3.Up * 0.2f) * ThrowForce;
 
 		_lastThrowTime = Time.GetTicksMsec() / 1000.0;
-	}
 
-	private void OnThrowFinished()
-	{
 		_isThrowing = false;
 		_anim.Play("Idle");
 	}
+
 
 	private void GetRayReward(RayCast3D ray)
 	{

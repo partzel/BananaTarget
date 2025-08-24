@@ -8,7 +8,7 @@ public partial class GameManager : Node
     [Export] public Monkey Monkey;
     [Export] public float RewardPerTarget = 1;
 
-    private float _totalReward = 0;
+    public float Reward = 0;
     private Timer _roundTimer;
     private Vector3 _monkeyStartPosition;
 
@@ -26,17 +26,17 @@ public partial class GameManager : Node
 
     private void OnReward(float reward)
     {
-        _totalReward += reward;
+        Reward += reward;
     }
 
     private void OnToucanScored()
     {
-        _totalReward += RewardPerTarget;
+        Reward += RewardPerTarget;
     }
 
     public void StartRound()
     {
-        _totalReward = 0;
+        Reward = 0;
         ResetEnvironment();
         _roundTimer.Start();
     }
@@ -49,7 +49,7 @@ public partial class GameManager : Node
 
     private void OnRoundTimeout()
     {
-        GD.Print("Round finished! Score: " + _totalReward);
+        GD.Print("Round finished! Score: " + Reward);
         StartRound();
     }
 }
