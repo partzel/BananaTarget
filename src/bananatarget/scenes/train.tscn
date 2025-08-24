@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbo5piaqdv2d4"]
+
+[ext_resource type="PackedScene" uid="uid://barftwps11sdv" path="res://scenes/Level.tscn" id="1_68jl8"]
+
+[node name="Train" type="Node3D"]
+
+[node name="Level_0" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -16)
+
+[node name="Level_1" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -16)
+
+[node name="Level_2" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -66)
+
+[node name="Level_3" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -66)
+
+[node name="Level_4" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -16)
+
+[node name="Level_5" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -16)
+
+[node name="Level_6" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -66)
+
+[node name="Level_7" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -66)
+
+[node name="Level_8" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -115)
+
+[node name="Level_9" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -115)
+
+[node name="Level_10" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -165)
+
+[node name="Level_11" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -165)
+
+[node name="Level_12" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -115)
+
+[node name="Level_13" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -115)
+
+[node name="Level_14" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -165)
+
+[node name="Level_15" parent="." instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -165)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6, 150, -98)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 39, 0)
