@@ -32,7 +32,7 @@ size = Vector3(24.584, 0.814453, 12.3815)
 [node name="Level" type="Node3D"]
 
 [node name="Monkey" parent="." instance=ExtResource("1_uhqny")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.09144, 0.860155, 2.1868)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.522606, 0.0952319, 0.659999)
 RotationSpeed = 5.0
 ThrowForce = 20.0
 
@@ -55,13 +55,13 @@ shadow_enabled = true
 shadow_opacity = 0.5
 
 [node name="ToucanPool" type="Node3D" parent="." node_paths=PackedStringArray("BananaPool")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.61777, 0, -7.52341)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.915672, 0, -14.1621)
 script = ExtResource("5_faw0r")
 BananaPool = NodePath("../Monkey/BananaPool")
 ToucanScene = ExtResource("4_kl8ac")
 PoolSize = 2
-SpawnAreaMin = Vector3(-6, 0.5, -10)
-SpawnAreaMax = Vector3(2, 0.5, -5)
+SpawnAreaMin = Vector3(-8, 0.5, -8)
+SpawnAreaMax = Vector3(8, 0.5, 8)
 
 [node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("ToucanPool", "BananaPool", "Monkey") groups=["game_manager"]]
 script = ExtResource("7_4qegb")

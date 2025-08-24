@@ -53,7 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -165)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -165)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6, 150, -98)
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 6, 108, -98)
 current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

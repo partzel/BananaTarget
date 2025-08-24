@@ -36,11 +36,13 @@ public partial class ToucanPool : Node3D
 
         var toucan = available.Dequeue();
 
-        toucan.GlobalPosition = new Vector3(
+        var offset = new Vector3(
             (float)GD.RandRange(SpawnAreaMin.X, SpawnAreaMax.X),
             (float)GD.RandRange(SpawnAreaMin.Y, SpawnAreaMax.Y),
             (float)GD.RandRange(SpawnAreaMin.Z, SpawnAreaMax.Z)
         );
+
+        toucan.GlobalPosition = GlobalPosition + offset;
 
         toucan.CollisionLayer = _toucanCollisionLayer;
         toucan.CollisionMask = _bananaCollisionLayer;
