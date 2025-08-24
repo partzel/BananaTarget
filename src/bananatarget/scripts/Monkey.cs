@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Godot;
 
 public partial class Monkey : CharacterBody3D
@@ -7,6 +9,17 @@ public partial class Monkey : CharacterBody3D
 	[Export] public float MoveSpeed = 5.0f;
 	[Export] public float ThrowForce = 10.0f;
 	[Export] public float ThrowCooldown = 2f;
+	[Export] public float TargetSeenReward = 0.00001f;
+	[Export] public float WaterProxPenality = -0.00001f;
+	[Export] public float WallProxPenality = -0.00001f;
+
+	[Signal] public delegate void RewardEventHandler(float reward);
+
+	public List<RayCast3D> TargetRays;
+	public List<RayCast3D> FrontRays;
+	public List<RayCast3D> BackRays;
+	public List<RayCast3D> RightRays;
+	public List<RayCast3D> LeftRays;
 
 	private Node3D _bananaSpawnLocation;
 	private AnimationPlayer _anim;
@@ -25,13 +38,12 @@ public partial class Monkey : CharacterBody3D
 		_bananaPool = GetNode<BananaPool>("BananaPool");
 		_cooldownBar = GetNode<CanvasLayer>("CooldownUI")
 					  .GetNode<TextureProgressBar>("ProgressBar");
-
 		_isThrowing = false;
-
-		_anim.Play("Idle");
-
 		_cooldownRemaining = 0;
 		_cooldownBar.Visible = false;
+
+		InitRaySets();
+		_anim.Play("Idle");
 	}
 
 	public override void _Process(double delta)
@@ -44,6 +56,13 @@ public partial class Monkey : CharacterBody3D
 			{
 				_cooldownBar.Visible = false;
 			}
+		}
+
+		// Reward
+		var allRays = TargetRays.Concat(BackRays).Concat(RightRays).Concat(LeftRays);
+		foreach (var ray in allRays)
+		{
+			GetRayReward(ray);
 		}
 	}
 
@@ -69,13 +88,12 @@ public partial class Monkey : CharacterBody3D
 		// Move forward
 		if (Input.IsActionPressed("ui_up"))
 		{
-			// Forward is -Z in Godot 3D
 			velocity = -Transform.Basis.Z * MoveSpeed;
 		}
 
+		// Move backward
 		if (Input.IsActionPressed("ui_down"))
 		{
-			// Forward is -Z in Godot 3D
 			velocity = Transform.Basis.Z * MoveSpeed;
 		}
 
@@ -99,7 +117,7 @@ public partial class Monkey : CharacterBody3D
 				_cooldownBar.Value = 100;
 			}
 		}
-		else if (  Input.IsActionPressed("ui_up")
+		else if (Input.IsActionPressed("ui_up")
 				|| Input.IsActionPressed("ui_down"))
 		{
 			_anim.Play("Walk");
@@ -117,15 +135,52 @@ public partial class Monkey : CharacterBody3D
 		if (banana is null) return;
 
 		banana.GlobalTransform = _bananaSpawnLocation.GlobalTransform;
-		banana.LinearVelocity = -Transform.Basis.Z * ThrowForce;
+		banana.LinearVelocity = (-Transform.Basis.Z * 0.8f + Vector3.Up * 0.2f) * ThrowForce;
 
-		_lastThrowTime = Time.GetTicksMsec()/1000.0;
+		_lastThrowTime = Time.GetTicksMsec() / 1000.0;
 	}
 
 	private void OnThrowFinished()
 	{
 		_isThrowing = false;
 		_anim.Play("Idle");
+	}
+
+	private void GetRayReward(RayCast3D ray)
+	{
+		if (ray.IsColliding())
+		{
+			var collider = (Node)ray.GetCollider();
+			if (collider.IsInGroup("toucan"))
+				EmitSignal(SignalName.Reward, TargetSeenReward);
+			if (collider.IsInGroup("water"))
+				EmitSignal(SignalName.Reward, WaterProxPenality);
+			if (collider.IsInGroup("wall"))
+				EmitSignal(SignalName.Reward, WallProxPenality);
+		}
+	}
+
+
+	private void InitRaySets()
+	{
+		RightRays = GetRays("Right");
+		LeftRays = GetRays("Left");
+		TargetRays = GetRays("Target");
+		BackRays = GetRays("Back");
+		FrontRays = GetRays("Front");
+	}
+
+	private List<RayCast3D> GetRays(string prefix)
+	{
+		List<RayCast3D> rays = new();
+		foreach (Node node in GetChildren())
+		{
+			var nodeName = node.Name.ToString();
+			if (node is RayCast3D ray && nodeName.StartsWith(prefix))
+				rays.Add(ray);
+		}
+
+		return rays;
 	}
 
 }

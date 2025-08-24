@@ -28,14 +28,15 @@ _data = {
 }
 
 [node name="Toucan" type="Area3D"]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_6xdjw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.182068, -0.207703)
 shape = SubResource("SphereShape3D_01kgs")
 
 [node name="Model3D" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0862331, 0, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.147797, -0.150246)
 
 [node name="Node2" type="Node3D" parent="Model3D"]
 

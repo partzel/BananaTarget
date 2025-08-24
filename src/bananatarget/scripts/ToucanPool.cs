@@ -41,8 +41,6 @@ public partial class ToucanPool : Node3D
             (float)GD.RandRange(SpawnAreaMin.Z, SpawnAreaMax.Z)
         );
 
-        toucan.CollisionLayer = 1;
-        toucan.CollisionMask = 1;
         toucan.Visible = true;
         toucan.AnimationPlayer.Play("Idle");
         toucan.SetProcess(true);
@@ -59,8 +57,6 @@ public partial class ToucanPool : Node3D
 
     private void ReturnToucan(Toucan toucan)
     {
-        toucan.CollisionLayer = 0;
-        toucan.CollisionMask = 0;
         toucan.AnimationPlayer.Play("Exit");
         available.Enqueue(toucan);
     }

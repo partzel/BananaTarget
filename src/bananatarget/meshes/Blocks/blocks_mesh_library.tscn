@@ -1,16 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://f04cklabcsjb"]
+[gd_scene load_steps=5 format=3 uid="uid://f04cklabcsjb"]
 
 [ext_resource type="ArrayMesh" uid="uid://bm6mdbx8a3sge" path="res://meshes/Blocks/dirt.res" id="1_heoph"]
 [ext_resource type="ArrayMesh" uid="uid://dc7by6ffj760l" path="res://meshes/Blocks/grass.res" id="2_qvx8e"]
 [ext_resource type="ArrayMesh" uid="uid://b5acagfcll3ia" path="res://meshes/Blocks/water.res" id="3_fy4gf"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_heoph"]
+size = Vector3(1, 2, 1)
+
 [node name="BlocksMeshLibrary" type="Node3D"]
 
-[node name="Dirt" type="MeshInstance3D" parent="."]
+[node name="Grass" type="StaticBody3D" parent="."]
+visible = false
+
+[node name="Grass" type="MeshInstance3D" parent="Grass"]
+mesh = ExtResource("2_qvx8e")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
+shape = SubResource("BoxShape3D_heoph")
+
+[node name="Dirt" type="StaticBody3D" parent="."]
+visible = false
+
+[node name="Dirt" type="MeshInstance3D" parent="Dirt"]
 mesh = ExtResource("1_heoph")
 
-[node name="Grass" type="MeshInstance3D" parent="."]
-mesh = ExtResource("2_qvx8e")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dirt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
+shape = SubResource("BoxShape3D_heoph")
 
-[node name="Water" type="MeshInstance3D" parent="."]
+[node name="Water" type="StaticBody3D" parent="." groups=["water"]]
+
+[node name="Water" type="MeshInstance3D" parent="Water"]
 mesh = ExtResource("3_fy4gf")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0.5)
+shape = SubResource("BoxShape3D_heoph")

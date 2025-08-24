@@ -41,7 +41,7 @@ _data = {
 }
 
 [node name="Monkey" type="CharacterBody3D"]
-collision_layer = 2
+collision_mask = 24
 script = ExtResource("1_1uot1")
 ThrowCooldown = 1.0
 
@@ -243,3 +243,108 @@ tint_progress = Color(0, 0.73344, 0.289932, 1)
 script = ExtResource("27_ak2q3")
 target = NodePath("../..")
 offset_3d = Vector3(0, 2, 0)
+
+[node name="BackRay_1" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 24
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="BackRay_2" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(1, 0, 1)
+collision_mask = 24
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="BackRay_3" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(-1, 0, 1)
+collision_mask = 24
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="FrontRay_1" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.493142, 0)
+target_position = Vector3(0, 0, -1)
+collision_mask = 24
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="FrontRay_2" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.493142, 0)
+target_position = Vector3(1, 0, -1)
+collision_mask = 24
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="FrontRay_3" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.493142, 1.33783)
+target_position = Vector3(-1, 0, -1)
+collision_mask = 24
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RightRay_1" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(1, 0, 0)
+collision_mask = 24
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="LeftRay_1" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(-1, 0, 0)
+collision_mask = 24
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="TargetRay_1" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(0, 0, -10)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="TargetRay_2" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(-2, 0, -10)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="TargetRay_3" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(-4, 0, -10)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="TargetRay_4" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(-6, 0, -10)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="TargetRay_5" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(2, 0, -10)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="TargetRay_6" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(4, 0, -10)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="TargetRay_7" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(6, 0, -10)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
