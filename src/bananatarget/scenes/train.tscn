@@ -1,11 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbo5piaqdv2d4"]
+[gd_scene load_steps=3 format=3 uid="uid://cbo5piaqdv2d4"]
 
-[ext_resource type="Script" uid="uid://dlck6tv8lkorf" path="res://scripts/TrainSetup.gd" id="1_6b7q7"]
 [ext_resource type="PackedScene" uid="uid://barftwps11sdv" path="res://scenes/Level.tscn" id="1_68jl8"]
 [ext_resource type="Script" uid="uid://dtjvnbvqpccmf" path="res://addons/godot_rl_agents/sync.gd" id="2_d43s7"]
 
 [node name="Train" type="Node3D"]
-script = ExtResource("1_6b7q7")
 
 [node name="Game" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -16)

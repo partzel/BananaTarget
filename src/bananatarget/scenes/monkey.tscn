@@ -44,6 +44,7 @@ _data = {
 collision_mask = 24
 script = ExtResource("1_1uot1")
 ThrowCooldown = 1.0
+ChooseToThrowReward = 5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.836536, 0)
@@ -72,7 +73,7 @@ mesh = ExtResource("3_ak2q3")
 skeleton = NodePath("")
 
 [node name="belly2" type="Node3D" parent="Model3D/Node/Monkey/trunk/pelvis2"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0)
+transform = Transform3D(0.991445, -0.0113761, 0.13003, 0.0337827, 0.984615, -0.171442, -0.126079, 0.174368, 0.976576, 0, 0, 0)
 
 [node name="belly" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0625, -0.015625)
@@ -88,7 +89,7 @@ mesh = ExtResource("5_ucw3d")
 skeleton = NodePath("")
 
 [node name="upper-right-arm2" type="Node3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2"]
-transform = Transform3D(0.326506, 0.326506, 0.887011, -0.707106, 0.707107, 2.98023e-08, -0.627211, -0.627212, 0.461749, -0.1875, 0.06875, -0.0625)
+transform = Transform3D(0.4266, 0.176704, 0.887011, -0.382683, 0.92388, 1.49012e-08, -0.819491, -0.339445, 0.461749, -0.1875, 0.06875, -0.0625)
 
 [node name="upper-right-arm" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/pelvis2/belly2/chest2/upper-right-arm2"]
 mesh = ExtResource("6_8dkmy")
@@ -182,7 +183,7 @@ mesh = ExtResource("18_vgp3i")
 skeleton = NodePath("")
 
 [node name="upper-left-leg2" type="Node3D" parent="Model3D/Node/Monkey/trunk"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0.125, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.92388, 0.382684, 0, -0.382684, 0.92388, 0.125, 0, 0)
 
 [node name="upper-left-leg" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/upper-left-leg2"]
 mesh = ExtResource("19_hkrva")
@@ -196,7 +197,7 @@ mesh = ExtResource("20_y51ww")
 skeleton = NodePath("")
 
 [node name="left-foot2" type="Node3D" parent="Model3D/Node/Monkey/trunk/upper-left-leg2/lower-left-leg2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.296875, -0.015625)
+transform = Transform3D(1, 0, 0, 0, 0.991445, -0.130526, 0, 0.130526, 0.991445, 0, -0.296875, -0.015625)
 
 [node name="left-foot" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/upper-left-leg2/lower-left-leg2/left-foot2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.046875, 0.015625)
@@ -204,7 +205,7 @@ mesh = ExtResource("21_b2wr8")
 skeleton = NodePath("")
 
 [node name="upper-right-leg2" type="Node3D" parent="Model3D/Node/Monkey/trunk"]
-transform = Transform3D(1, 0, 0, 0, 0.939692, 0.34202, 0, -0.34202, 0.939692, -0.125, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.999048, 0.0436194, 0, -0.0436194, 0.999048, -0.125, 0, 0)
 
 [node name="upper-right-leg" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/upper-right-leg2"]
 mesh = ExtResource("22_y0ttc")
@@ -218,7 +219,7 @@ mesh = ExtResource("23_72uj0")
 skeleton = NodePath("")
 
 [node name="right-foot2" type="Node3D" parent="Model3D/Node/Monkey/trunk/upper-right-leg2/lower-right-leg2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.296875, -0.03125)
+transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21644, 0, -0.21644, 0.976296, 0, -0.296875, -0.03125)
 
 [node name="right-foot" type="MeshInstance3D" parent="Model3D/Node/Monkey/trunk/upper-right-leg2/lower-right-leg2/right-foot2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.046875, 0.03125)

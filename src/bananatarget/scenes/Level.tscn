@@ -37,7 +37,10 @@ script = ExtResource("1_rccsh")
 [node name="Monkey" parent="." instance=ExtResource("1_uhqny")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.522606, 0.0952319, 0.659999)
 RotationSpeed = 5.0
-ThrowForce = 20.0
+ThrowForce = 25.0
+TargetSeenReward = 0.01
+WaterProxPenality = -0.001
+WallProxPenality = -0.001
 
 [node name="BananaPool" type="Node" parent="Monkey"]
 script = ExtResource("2_k5jlv")
@@ -71,10 +74,7 @@ script = ExtResource("7_4qegb")
 ToucanPool = NodePath("../ToucanPool")
 BananaPool = NodePath("../Monkey/BananaPool")
 Monkey = NodePath("../Monkey")
-
-[node name="RoundTimer" type="Timer" parent="GameManager"]
-wait_time = 10.0
-one_shot = true
+RewardPerTarget = 100.0
 
 [node name="Abyss" type="Area3D" parent="." node_paths=PackedStringArray("BananaPool")]
 collision_layer = 16
@@ -148,3 +148,9 @@ metadata/_editor_floor_ = Vector3(0, -3, 0)
 [node name="AIController3D" type="Node3D" parent="." groups=["AGENT"]]
 script = ExtResource("9_2eouu")
 metadata/_custom_type_script = "uid://bav7c0j1ooa0n"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="AIController3D" method="_on_timer_timeout"]

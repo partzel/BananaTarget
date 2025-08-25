@@ -10,6 +10,7 @@ public partial class Monkey : CharacterBody3D
 	[Export] public float ThrowForce = 10.0f;
 	[Export] public float ThrowCooldown = 2f;
 	[Export] public float TargetSeenReward = 0.00001f;
+	[Export] public float ChooseToThrowReward = 0.001f;
 	[Export] public float WaterProxPenality = -0.00001f;
 	[Export] public float WallProxPenality = -0.00001f;
 
@@ -21,15 +22,17 @@ public partial class Monkey : CharacterBody3D
 	public List<RayCast3D> RightRays;
 	public List<RayCast3D> LeftRays;
 
+	public float CooldownRemaining;
+	public bool IsThrowing;
+
 	private Node3D _bananaSpawnLocation;
 	private AnimationPlayer _anim;
 	private BananaPool _bananaPool;
 	private TextureProgressBar _cooldownBar;
 	private float _gravity;
 	private float _verticalVelocity;
-	private bool _isThrowing;
 	private double _lastThrowTime;
-	private float _cooldownRemaining;
+
 
 	public override void _Ready()
 	{
@@ -42,8 +45,8 @@ public partial class Monkey : CharacterBody3D
 		_bananaPool = GetNode<BananaPool>("BananaPool");
 		_cooldownBar = GetNode<CanvasLayer>("CooldownUI")
 					  .GetNode<TextureProgressBar>("ProgressBar");
-		_isThrowing = false;
-		_cooldownRemaining = 0;
+		IsThrowing = false;
+		CooldownRemaining = 0;
 		_cooldownBar.Visible = false;
 
 		InitRaySets();
@@ -52,13 +55,14 @@ public partial class Monkey : CharacterBody3D
 
 	public override void _Process(double delta)
 	{
-		if (_cooldownRemaining > 0)
+		if (CooldownRemaining > 0)
 		{
-			_cooldownRemaining -= (float)delta;
-			_cooldownBar.Value = _cooldownRemaining / ThrowCooldown * 100;
-			if (_cooldownRemaining <= 0)
+			CooldownRemaining -= (float)delta;
+			_cooldownBar.Value = CooldownRemaining / ThrowCooldown * 100;
+			if (CooldownRemaining <= 0)
 			{
 				_cooldownBar.Visible = false;
+				IsThrowing = false;
 			}
 		}
 
@@ -77,7 +81,7 @@ public partial class Monkey : CharacterBody3D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		if (_isThrowing)
+		if (IsThrowing)
 			return;
 
 		HandleInput((float)delta);
@@ -131,14 +135,15 @@ public partial class Monkey : CharacterBody3D
 
 	private void HandleInput(float delta)
 	{
-		if (_isThrowing)
+		if (IsThrowing)
 			return;
 
 		if (Input.IsAnythingPressed())
 		{
-			if (Input.IsActionJustPressed("throw"))
+			if (Input.IsActionJustPressed("throw") && CooldownRemaining <= 0)
 			{
 				Throw();
+				return; // Throw does not mix with other actions
 			}
 			if (Input.IsActionPressed("ui_left"))
 			{
@@ -165,31 +170,37 @@ public partial class Monkey : CharacterBody3D
 
 	private void Throw()
 	{
-		bool canThrow = _cooldownRemaining <= 0 && !_isThrowing;
+
+		bool canThrow = CooldownRemaining <= 0 && !IsThrowing;
 		if (_anim is not null && canThrow)
 		{
-			_isThrowing = true;
+			IsThrowing = true;
 			_anim.Play("Throw");
 
-			_cooldownRemaining = ThrowCooldown;
+			CooldownRemaining = ThrowCooldown;
 			_cooldownBar.Visible = true;
 			_cooldownBar.Value = 100;
 		}
+
 	}
 
 
 	private void OnThrowRelease()
 	{
-		var banana = _bananaPool.GetBanana();
+		EmitSignal(SignalName.Reward, ChooseToThrowReward);
 
+		var banana = _bananaPool.GetBanana();
 		if (banana is null) return;
 
 		banana.GlobalTransform = _bananaSpawnLocation.GlobalTransform;
 		banana.LinearVelocity = (-Transform.Basis.Z * 0.8f + Vector3.Up * 0.2f) * ThrowForce;
 
 		_lastThrowTime = Time.GetTicksMsec() / 1000.0;
+	}
 
-		_isThrowing = false;
+	private void OnThrowFinish()
+	{
+		IsThrowing = false;
 		_anim.Play("Idle");
 	}
 
