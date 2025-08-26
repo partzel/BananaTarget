@@ -51,11 +51,11 @@ public partial class ToucanPool : Node3D
         toucan.SetProcess(true);
     }
 
-    private void OnToucanHit(Toucan toucan, RigidBody3D banana)
+    private void OnToucanHit(Toucan toucan)
     {
         EmitSignal(SignalName.ToucanScored);
 
-        BananaPool.ReturnBanana(banana);
+        BananaPool.ReturnBanana();
         ReturnToucan(toucan);
         SpawnToucan();
     }

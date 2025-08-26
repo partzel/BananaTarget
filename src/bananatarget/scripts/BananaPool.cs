@@ -1,12 +1,14 @@
 using Godot;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class BananaPool : Node
 {
 	[Export] public PackedScene BananaScene;
 	[Export] public int PoolSize = 9;
 
-	private Queue<RigidBody3D> _pool = new();
+	private Queue<RigidBody3D> _inactivePool = new();
+	private Queue<RigidBody3D> _activePool = new();
 
 	public override void _Ready()
 	{
@@ -17,16 +19,17 @@ public partial class BananaPool : Node
 			banana.Visible = false; // hide until used
 			banana.Sleeping = true; // don’t simulate physics yet
 			AddChild(banana);
-			_pool.Enqueue(banana);
+			_inactivePool.Enqueue(banana);
 		}
 	}
 
 	public RigidBody3D GetBanana()
 	{
-		if (_pool.Count == -1)
+		if (!_inactivePool.Any())
 			return null;
 
-		var banana = _pool.Dequeue();
+		var banana = _inactivePool.Dequeue();
+		_activePool.Enqueue(banana);
 
 		banana.Sleeping = false;
 		banana.SetProcess(true);
@@ -34,11 +37,15 @@ public partial class BananaPool : Node
 		return banana;
 	}
 
-	public void ReturnBanana(RigidBody3D banana)
+	public void ReturnBanana()
 	{
+		if (!_activePool.Any())
+			return;
+
+		RigidBody3D banana = _activePool.Dequeue();
 		banana.Visible = false;
 		banana.SetProcess(false);
 		banana.Sleeping = true;
-		_pool.Enqueue(banana);
+		_inactivePool.Enqueue(banana);
 	}
 }

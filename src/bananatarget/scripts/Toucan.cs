@@ -2,7 +2,7 @@ using Godot;
 
 public partial class Toucan : Area3D
 {
-	[Signal] public delegate void ToucanHitEventHandler(Toucan toucan, RigidBody3D banana);
+	[Signal] public delegate void ToucanHitEventHandler(Toucan toucan);
 	public AnimationPlayer AnimationPlayer;
 
 	public override void _Ready()
@@ -21,7 +21,7 @@ public partial class Toucan : Area3D
 	{
 		if (body.IsInGroup("banana"))
 		{
-			EmitSignal(SignalName.ToucanHit, this, body);
+			EmitSignal(SignalName.ToucanHit, this);
 		}
 	}
 }

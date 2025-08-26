@@ -14,7 +14,7 @@ public partial class Abyss : Area3D
     {
         if (body.IsInGroup("banana"))
         {
-            BananaPool.ReturnBanana((RigidBody3D) body);
+            BananaPool.ReturnBanana();
         }
     }
 }
