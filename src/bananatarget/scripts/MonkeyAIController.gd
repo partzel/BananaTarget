@@ -1,9 +1,18 @@
 extends AIController3D
 
-@onready var monkey: Node3D = get_parent().get_node("Monkey")
-@onready var game_manager: Node = get_parent().get_node("GameManager")
+# CS Types
+const BananaPool := preload("res://scripts/BananaPool.cs")
+const Monkey := preload("res://scripts/Monkey.cs")
+const GameManager := preload("res://scripts/GameManager.cs")
+
+
+@onready var monkey: Monkey = get_parent().get_node("Monkey")
+@onready var game_manager: GameManager = get_parent().get_node("GameManager")
+@onready var banana_pool: BananaPool = monkey.get_node("BananaPool")
+
 var move_action : int = 0
 var reward_step: float = 0.0
+
 
 func _ready() -> void:
 	assert(game_manager != null, "Could not find the game manager!")
@@ -43,13 +52,37 @@ func get_obs() -> Dictionary:
 	var monkey_vel = to_local(monkey.velocity)
 	var monkey_yaw = monkey.rotation.y
 	var cooldown = monkey.CooldownRemaining / monkey.ThrowCooldown
-	var is_throwing = monkey.IsThrowing
+	
+	var banana_pos: Vector3
+	var banana_lin_vel: Vector3
+	var banana_ang_vel: Vector3
+	
+	var is_banana_thrown = not banana_pool.IsActivePoolEmpty()
+	
+	if is_banana_thrown:
+		var current_banana = banana_pool.GetLatestBanana()
+		banana_pos = to_local(current_banana.global_position)
+		banana_lin_vel = to_local(current_banana.linear_velocity)
+		banana_ang_vel = to_local(current_banana.angular_velocity)
+	else:
+		banana_pos = Vector3.ZERO
+		banana_lin_vel = Vector3.ZERO
+		banana_ang_vel = Vector3.ZERO
+		
 
 	var obs = [
 		monkey_pos.x, monkey_pos.y, monkey_pos.z,
 		monkey_vel.x, monkey_vel.y, monkey_vel.z,
-		is_throwing, cooldown, monkey_yaw
+		banana_pos.x, banana_pos.y, banana_pos.z,
+		banana_lin_vel.x, banana_lin_vel.y, banana_lin_vel.z,
+		banana_ang_vel.x, banana_ang_vel.y, banana_ang_vel.z,
+		is_banana_thrown, cooldown, monkey_yaw
 	]
+	
+
+	if is_banana_thrown:
+		print(obs)
+	
 	return {"obs":obs}
 
 
@@ -69,6 +102,9 @@ func get_action_space() -> Dictionary:
 
 
 func set_action(action) -> void:
+	if monkey.IsThrowing:
+		return
+		
 	move_action = int(action["move_action"])
 
 

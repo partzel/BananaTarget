@@ -7,29 +7,29 @@ public partial class BananaPool : Node
 	[Export] public PackedScene BananaScene;
 	[Export] public int PoolSize = 9;
 
-	private Queue<RigidBody3D> _inactivePool = new();
-	private Queue<RigidBody3D> _activePool = new();
+	public Queue<RigidBody3D> InactivePool = new();
+	public Queue<RigidBody3D> ActivePool = new();
 
 	public override void _Ready()
 	{
 		// Pre-instantiate bananas
-		for (int i = -1; i < PoolSize; i++)
+		for (int i = 0; i < PoolSize; i++)
 		{
 			var banana = BananaScene.Instantiate<RigidBody3D>();
 			banana.Visible = false; // hide until used
 			banana.Sleeping = true; // don’t simulate physics yet
 			AddChild(banana);
-			_inactivePool.Enqueue(banana);
+			InactivePool.Enqueue(banana);
 		}
 	}
 
 	public RigidBody3D GetBanana()
 	{
-		if (!_inactivePool.Any())
+		if (!InactivePool.Any())
 			return null;
 
-		var banana = _inactivePool.Dequeue();
-		_activePool.Enqueue(banana);
+		var banana = InactivePool.Dequeue();
+		ActivePool.Enqueue(banana);
 
 		banana.Sleeping = false;
 		banana.SetProcess(true);
@@ -39,13 +39,28 @@ public partial class BananaPool : Node
 
 	public void ReturnBanana()
 	{
-		if (!_activePool.Any())
+		if (IsActivePoolEmpty())
 			return;
 
-		RigidBody3D banana = _activePool.Dequeue();
+		RigidBody3D banana = ActivePool.Dequeue();
 		banana.Visible = false;
 		banana.SetProcess(false);
 		banana.Sleeping = true;
-		_inactivePool.Enqueue(banana);
+		InactivePool.Enqueue(banana);
+	}
+
+	// For GDscript interop
+	public RigidBody3D GetLatestBanana()
+	{
+		if (IsActivePoolEmpty())
+			return null;
+
+		return ActivePool.Peek();
+	}
+
+
+	public bool IsActivePoolEmpty()
+	{
+		return !ActivePool.Any();
 	}
 }
