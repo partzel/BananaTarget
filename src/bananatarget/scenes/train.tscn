@@ -6,399 +6,183 @@
 [node name="Train" type="Node3D"]
 
 [node name="Game" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6963, 0, 151.999)
 
 [node name="Game2" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.555, 0, 151.999)
 
 [node name="Game3" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -66)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6963, 0, 66.4065)
 
 [node name="Game4" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -66)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.555, 0, 66.4065)
 
 [node name="Game5" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.323, 0, 151.999)
 
 [node name="Game6" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 295.976, 0, 151.999)
 
 [node name="Game7" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -66)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.323, 0, 66.4065)
 
 [node name="Game8" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -66)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 295.976, 0, 66.4065)
 
 [node name="Game9" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6963, 0, -25.7593)
 
 [node name="Game10" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.555, 0, -25.7593)
 
 [node name="Game11" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6963, 0, -113.937)
 
 [node name="Game12" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.555, 0, -113.937)
 
 [node name="Game13" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.323, 0, -25.7593)
 
 [node name="Game14" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 295.976, 0, -25.7593)
 
 [node name="Game15" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.323, 0, -113.937)
 
 [node name="Game16" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 295.976, 0, -113.937)
 
 [node name="Game17" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 0, -16)
-
-[node name="Game18" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, -16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.516, 0, 151.999)
 
 [node name="Game19" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 0, -66)
-
-[node name="Game20" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, -66)
-
-[node name="Game21" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, -16)
-
-[node name="Game22" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231, 0, -16)
-
-[node name="Game23" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, -66)
-
-[node name="Game24" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231, 0, -66)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.516, 0, 66.4065)
 
 [node name="Game25" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 0, -115)
-
-[node name="Game26" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, -115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.516, 0, -25.7593)
 
 [node name="Game27" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 0, -165)
-
-[node name="Game28" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, -165)
-
-[node name="Game29" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, -115)
-
-[node name="Game30" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231, 0, -115)
-
-[node name="Game31" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, -165)
-
-[node name="Game32" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231, 0, -165)
-
-[node name="Game33" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -213)
-
-[node name="Game34" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -213)
-
-[node name="Game35" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -263)
-
-[node name="Game36" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -263)
-
-[node name="Game37" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -213)
-
-[node name="Game38" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -213)
-
-[node name="Game39" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -263)
-
-[node name="Game40" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -263)
-
-[node name="Game41" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -312)
-
-[node name="Game42" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -312)
-
-[node name="Game43" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 0, -362)
-
-[node name="Game44" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -362)
-
-[node name="Game45" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -312)
-
-[node name="Game46" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -312)
-
-[node name="Game47" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -362)
-
-[node name="Game48" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -362)
-
-[node name="Game49" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 0, -213)
-
-[node name="Game50" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, -213)
-
-[node name="Game51" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 0, -263)
-
-[node name="Game52" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, -263)
-
-[node name="Game53" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, -213)
-
-[node name="Game54" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231, 0, -213)
-
-[node name="Game55" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, -263)
-
-[node name="Game56" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231, 0, -263)
-
-[node name="Game57" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 0, -312)
-
-[node name="Game58" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, -312)
-
-[node name="Game59" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 0, -362)
-
-[node name="Game60" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, -362)
-
-[node name="Game61" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, -312)
-
-[node name="Game62" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231, 0, -312)
-
-[node name="Game63" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, -362)
-
-[node name="Game64" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231, 0, -362)
-
-[node name="Game65" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -385, 0, -213)
-
-[node name="Game66" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345, 0, -213)
-
-[node name="Game67" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -385, 0, -263)
-
-[node name="Game68" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345, 0, -263)
-
-[node name="Game69" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304, 0, -213)
-
-[node name="Game70" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -264, 0, -213)
-
-[node name="Game71" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304, 0, -263)
-
-[node name="Game72" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -264, 0, -263)
-
-[node name="Game73" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -385, 0, -312)
-
-[node name="Game74" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345, 0, -312)
-
-[node name="Game75" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -385, 0, -362)
-
-[node name="Game76" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345, 0, -362)
-
-[node name="Game77" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304, 0, -312)
-
-[node name="Game78" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -264, 0, -312)
-
-[node name="Game79" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304, 0, -362)
-
-[node name="Game80" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -264, 0, -362)
-
-[node name="Game81" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219, 0, -213)
-
-[node name="Game82" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -179, 0, -213)
-
-[node name="Game83" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219, 0, -263)
-
-[node name="Game84" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -179, 0, -263)
-
-[node name="Game85" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138, 0, -213)
-
-[node name="Game86" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 0, -213)
-
-[node name="Game87" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138, 0, -263)
-
-[node name="Game88" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 0, -263)
-
-[node name="Game89" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219, 0, -312)
-
-[node name="Game90" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -179, 0, -312)
-
-[node name="Game91" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219, 0, -362)
-
-[node name="Game92" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -179, 0, -362)
-
-[node name="Game93" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138, 0, -312)
-
-[node name="Game94" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 0, -312)
-
-[node name="Game95" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138, 0, -362)
-
-[node name="Game96" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 0, -362)
-
-[node name="Game97" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -385, 0, -17)
-
-[node name="Game98" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345, 0, -17)
-
-[node name="Game99" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -385, 0, -67)
-
-[node name="Game100" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345, 0, -67)
-
-[node name="Game101" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304, 0, -17)
-
-[node name="Game102" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -264, 0, -17)
-
-[node name="Game103" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304, 0, -67)
-
-[node name="Game104" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -264, 0, -67)
-
-[node name="Game105" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -385, 0, -116)
-
-[node name="Game106" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345, 0, -116)
-
-[node name="Game107" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -385, 0, -166)
-
-[node name="Game108" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345, 0, -166)
-
-[node name="Game109" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304, 0, -116)
-
-[node name="Game110" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -264, 0, -116)
-
-[node name="Game111" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304, 0, -166)
-
-[node name="Game112" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -264, 0, -166)
-
-[node name="Game113" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219, 0, -17)
-
-[node name="Game114" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -179, 0, -17)
-
-[node name="Game115" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219, 0, -67)
-
-[node name="Game116" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -179, 0, -67)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.516, 0, -113.937)
 
 [node name="Game117" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138, 0, -17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138, 0, 150.999)
 
 [node name="Game118" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 0, -17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.436, 0, 150.999)
 
 [node name="Game119" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138, 0, -67)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138, 0, 65.4065)
 
 [node name="Game120" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 0, -67)
-
-[node name="Game121" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219, 0, -116)
-
-[node name="Game122" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -179, 0, -116)
-
-[node name="Game123" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219, 0, -166)
-
-[node name="Game124" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -179, 0, -166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.436, 0, 65.4065)
 
 [node name="Game125" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138, 0, -116)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138, 0, -26.7593)
 
 [node name="Game126" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 0, -116)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.436, 0, -26.7593)
 
 [node name="Game127" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138, 0, -166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138, 0, -114.937)
 
 [node name="Game128" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 0, -166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.436, 0, -114.937)
+
+[node name="Game18" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6963, 0, -212.87)
+
+[node name="Game20" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.555, 0, -212.87)
+
+[node name="Game21" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.323, 0, -212.87)
+
+[node name="Game22" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 295.976, 0, -212.87)
+
+[node name="Game28" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 392.516, 0, -212.87)
+
+[node name="Game129" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138, 0, -213.87)
+
+[node name="Game130" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.436, 0, -213.87)
+
+[node name="Game121" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -302.846, 0, 150.999)
+
+[node name="Game122" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215.07, 0, 150.999)
+
+[node name="Game123" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -302.846, 0, 65.4065)
+
+[node name="Game124" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215.07, 0, 65.4065)
+
+[node name="Game131" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -302.846, 0, -26.7593)
+
+[node name="Game132" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215.07, 0, -26.7593)
+
+[node name="Game133" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -302.846, 0, -114.937)
+
+[node name="Game134" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215.07, 0, -114.937)
+
+[node name="Game135" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -302.846, 0, -213.87)
+
+[node name="Game136" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215.07, 0, -213.87)
+
+[node name="Game137" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -472.844, 0, 150.999)
+
+[node name="Game138" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -392.28, 0, 150.999)
+
+[node name="Game139" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -472.844, 0, 65.4065)
+
+[node name="Game140" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -392.28, 0, 65.4065)
+
+[node name="Game141" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -472.844, 0, -26.7593)
+
+[node name="Game142" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -392.28, 0, -26.7593)
+
+[node name="Game143" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -472.844, 0, -114.937)
+
+[node name="Game144" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -392.28, 0, -114.937)
+
+[node name="Game145" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -472.844, 0, -213.87)
+
+[node name="Game146" parent="." groups=["game"] instance=ExtResource("1_68jl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -392.28, 0, -213.87)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 6, 108, -98)
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 177.323, 108, -8.75927)
 
 [node name="Camera3D_close_view" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -16, 15, -21)
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 108.555, 15, -31.5899)
 current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 39, 0)
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 124.555, 39, 167.999)
 
 [node name="Sync" type="Node" parent="."]
 script = ExtResource("2_d43s7")
+action_repeat = 4
+speed_up = 100.0
+onnx_model_path = "model_2.onnx"
 metadata/_custom_type_script = "uid://dtjvnbvqpccmf"

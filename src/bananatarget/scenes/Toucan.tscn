@@ -19,7 +19,7 @@
 [ext_resource type="Animation" uid="uid://blo5a411cm07c" path="res://animations/Toucan/Exit.res" id="16_jk5un"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_01kgs"]
-radius = 0.370315
+radius = 0.680758
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gdwv1"]
 _data = {

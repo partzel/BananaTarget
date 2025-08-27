@@ -44,7 +44,6 @@ _data = {
 collision_mask = 24
 script = ExtResource("1_1uot1")
 ThrowCooldown = 1.0
-ChooseToThrowReward = 5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.836536, 0)
@@ -287,49 +286,49 @@ collision_mask = 24
 
 [node name="TargetRay_1" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-target_position = Vector3(0, 0, -20)
+target_position = Vector3(0, 0, -35)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="TargetRay_2" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-target_position = Vector3(-2, 0, -20)
+target_position = Vector3(-2, 0, -35)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="TargetRay_3" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-target_position = Vector3(-4, 0, -20)
+target_position = Vector3(-4, 0, -35)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="TargetRay_4" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-target_position = Vector3(-6, 0, -20)
+target_position = Vector3(-6, 0, -35)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="TargetRay_5" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-target_position = Vector3(2, 0, -20)
+target_position = Vector3(2, 0, -35)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="TargetRay_6" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-target_position = Vector3(4, 0, -20)
+target_position = Vector3(4, 0, -35)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="TargetRay_7" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-target_position = Vector3(6, 0, -20)
+target_position = Vector3(6, 0, -35)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false

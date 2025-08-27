@@ -10,9 +10,9 @@ public partial class Monkey : CharacterBody3D
 	[Export] public float ThrowForce = 10.0f;
 	[Export] public float ThrowCooldown = 2f;
 	[Export] public float TargetSeenReward = 0.00001f;
-	[Export] public float ChooseToThrowReward = 0.001f;
 	[Export] public float WaterProxPenality = -0.00001f;
 	[Export] public float WallProxPenality = -0.00001f;
+	[Export] public float DensePenality = -0.01f;
 
 	[Signal] public delegate void RewardEventHandler(float reward);
 
@@ -88,50 +88,60 @@ public partial class Monkey : CharacterBody3D
 	}
 
 	public void MoveForward(float delta)
-    {
+	{
 		_anim.Play("Walk");
-        Velocity = -Transform.Basis.Z * MoveSpeed;
-        ApplyGravity(delta);
-        MoveAndSlide();
-    }
+		Velocity = -Transform.Basis.Z * MoveSpeed;
+		ApplyGravity(delta);
+		MoveAndSlide();
+		EmitSignal(SignalName.Reward, DensePenality);
+	}
+	
 
-    public void MoveBackward(float delta)
-    {
+	public void MoveBackward(float delta)
+	{
 		_anim.Play("Walk");
-        Velocity = Transform.Basis.Z * MoveSpeed;
-        ApplyGravity(delta);
-        MoveAndSlide();
-    }
+		Velocity = Transform.Basis.Z * MoveSpeed;
+		ApplyGravity(delta);
+		MoveAndSlide();
+		EmitSignal(SignalName.Reward, DensePenality);
+		
+	}
 
-    public void RotateLeft(float delta)
-    {
+	public void RotateLeft(float delta)
+	{
 		_anim.Play("Idle");
-        RotateY(-RotationSpeed * delta);
-    }
+		RotateY(-RotationSpeed * delta);
+		EmitSignal(SignalName.Reward, DensePenality);
+		
+	}
 
-    public void RotateRight(float delta)
-    {
+	public void RotateRight(float delta)
+	{
 		_anim.Play("Idle");
-        RotateY(RotationSpeed * delta);
-    }
+		RotateY(RotationSpeed * delta);
+		EmitSignal(SignalName.Reward, DensePenality);
+		
+	}
 
-    public void DoNothing(float delta)
-    {
+	public void DoNothing(float delta)
+	{
 		_anim.Play("Idle");
-        Velocity = Vector3.Zero;
-        ApplyGravity(delta);
-        MoveAndSlide();
-    }
+		Velocity = Vector3.Zero;
+		ApplyGravity(delta);
+		MoveAndSlide();
+		EmitSignal(SignalName.Reward, DensePenality);
+		
+	}
 
-    private void ApplyGravity(float delta)
-    {
-        if (!IsOnFloor())
-            _verticalVelocity += _gravity * delta;
-        else
-            _verticalVelocity = 0;
+	private void ApplyGravity(float delta)
+	{
+		if (!IsOnFloor())
+			_verticalVelocity += _gravity * delta;
+		else
+			_verticalVelocity = 0;
 
-        Velocity = new Vector3(Velocity.X, _verticalVelocity, Velocity.Z);
-    }
+		Velocity = new Vector3(Velocity.X, _verticalVelocity, Velocity.Z);
+	}
 
 	private void HandleInput(float delta)
 	{
@@ -166,11 +176,11 @@ public partial class Monkey : CharacterBody3D
 		{
 			DoNothing(delta);
 		}
-    }
+	}
 
 	private void Throw()
 	{
-
+		EmitSignal(SignalName.Reward, DensePenality);
 		bool canThrow = CooldownRemaining <= 0 && !IsThrowing;
 		if (_anim is not null && canThrow)
 		{
@@ -187,7 +197,7 @@ public partial class Monkey : CharacterBody3D
 
 	private void OnThrowRelease()
 	{
-		EmitSignal(SignalName.Reward, ChooseToThrowReward);
+		// EmitSignal(SignalName.Reward, ChooseToThrowReward);
 
 		var banana = _bananaPool.GetBanana();
 		if (banana is null) return;

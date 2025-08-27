@@ -7,6 +7,8 @@ from stable_baselines3 import PPO
 from stable_baselines3.common.callbacks import CheckpointCallback
 from stable_baselines3.common.vec_env.vec_monitor import VecMonitor
 
+import torch as th
+
 from godot_rl.core.utils import can_import
 from godot_rl.wrappers.onnx.stable_baselines_export import export_model_as_onnx
 from godot_rl.wrappers.stable_baselines_wrapper import StableBaselinesGodotEnv
@@ -187,15 +189,20 @@ def linear_schedule(initial_value: float) -> Callable[[float], float]:
 
 
 if args.resume_model_path is None:
-    learning_rate = 0.0003 if not args.linear_lr_schedule else linear_schedule(0.0003)
+    learning_rate = 0.00003 if not args.linear_lr_schedule else linear_schedule(0.00003)
     model: PPO = PPO(
         "MultiInputPolicy",
         env,
         ent_coef=0.0001,
         verbose=2,
-        n_steps=32,
+        n_steps=128,
+        gamma=0.98,
         tensorboard_log=args.experiment_dir,
         learning_rate=learning_rate,
+        policy_kwargs={
+            "net_arch": dict(pi=[256, 256, 256], vf=[256, 256]),
+            "activation_fn": th.nn.ReLU,
+        }
     )
 else:
     path_zip = pathlib.Path(args.resume_model_path)
